@@ -2,6 +2,18 @@
 export const cpuData = [
   // AMD Ryzen 5 Series
   {
+    id: "amd-ryzen5-1500x",
+    name: "AMD Ryzen 5 1500X",
+    brand: "amd",
+    image: "/cpu/amd/ryzen/ryzen5-1500x.png",
+  },
+  {
+    id: "amd-ryzen5-1600",
+    name: "AMD Ryzen 5 1600",
+    brand: "amd",
+    image: "/cpu/amd/ryzen/ryzen5-1600.png",
+  },
+  {
     id: "amd-ryzen5-1600x",
     name: "AMD Ryzen 5 1600X",
     brand: "amd",
@@ -127,26 +139,32 @@ export const cpuData = [
     brand: "amd",
     image: "/cpu/amd/ryzen/ryzen5-5600x3d.png",
   },
+  {
+    id: "amd-ryzen5-7500f",
+    name: "AMD Ryzen 5 7500F",
+    brand: "amd",
+    image: "/cpu/amd/ryzen/ryzen5-7500f.png",
+  },
+  {
+    id: "amd-ryzen5-7600",
+    name: "AMD Ryzen 5 7600",
+    brand: "amd",
+    image: "/cpu/amd/ryzen/ryzen5-7600.png",
+  },
+  {
+    id: "amd-ryzen5-7600x",
+    name: "AMD Ryzen 5 7600X",
+    brand: "amd",
+    image: "/cpu/amd/ryzen/ryzen5-7600x.png",
+  },
+  {
+    id: "amd-ryzen5-7600x3d",
+    name: "AMD Ryzen 5 7600X3D",
+    brand: "amd",
+    image: "/cpu/amd/ryzen/ryzen5-7600x3d.png",
+  },
 
   // AMD Ryzen 7 Series
-  {
-    id: "amd-ryzen7-7500f",
-    name: "AMD Ryzen 7 7500F",
-    brand: "amd",
-    image: "/cpu/amd/ryzen/ryzen7-7500f.png",
-  },
-  {
-    id: "amd-ryzen7-7600",
-    name: "AMD Ryzen 7 7600",
-    brand: "amd",
-    image: "/cpu/amd/ryzen/ryzen7-7600.png",
-  },
-  {
-    id: "amd-ryzen7-7600x",
-    name: "AMD Ryzen 7 7600X",
-    brand: "amd",
-    image: "/cpu/amd/ryzen/ryzen7-7600x.png",
-  },
   {
     id: "amd-ryzen7-7700",
     name: "AMD Ryzen 7 7700",
@@ -160,22 +178,10 @@ export const cpuData = [
     image: "/cpu/amd/ryzen/ryzen7-7700x.png",
   },
   {
-    id: "amd-ryzen7-7700x3d",
-    name: "AMD Ryzen 7 7700X3D",
+    id: "amd-ryzen7-7800x3d",
+    name: "AMD Ryzen 7 7800X3D",
     brand: "amd",
-    image: "/cpu/amd/ryzen/ryzen7-7700x3d.png",
-  },
-  {
-    id: "amd-ryzen7-7700x",
-    name: "AMD Ryzen 7 7700X",
-    brand: "amd",
-    image: "/cpu/amd/ryzen/ryzen7-7700x.png",
-  },
-  {
-    id: "amd-ryzen7-9800x3d",
-    name: "AMD Ryzen 7 9800X3D",
-    brand: "amd",
-    image: "/cpu/amd/ryzen/ryzen7-9800x3d.png",
+    image: "/cpu/amd/ryzen/ryzen7-7800x3d.png",
   },
 
   // AMD Ryzen 9 Series
