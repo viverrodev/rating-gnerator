@@ -2,11 +2,18 @@ import React, { useState, useMemo } from "react";
 import Image from "next/image";
 import { ChevronDown, Search, X } from "lucide-react";
 
+interface Option {
+  id: string;
+  name: string;
+  brand: string;
+  image: string;
+}
+
 interface DropdownProps {
   label: string;
-  options: Array<{ id: string; name: string; brand: string; image: string }>;
-  value: any;
-  onChange: (value: any) => void;
+  options: Option[];
+  value: Option | null;
+  onChange: (value: Option | null) => void;
   placeholder: string;
 }
 
@@ -31,7 +38,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
     );
   }, [options, searchTerm]);
 
-  const handleSelect = (option: any) => {
+  const handleSelect = (option: Option | null) => {
     onChange(option);
     setIsOpen(false);
     setSearchTerm("");
@@ -151,7 +158,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
                 ))
               ) : (
                 <div className="px-4 py-6 text-center text-gray-400">
-                  No results found for "{searchTerm}"
+                  No results found for &quot;{searchTerm}&quot;
                 </div>
               )}
             </div>

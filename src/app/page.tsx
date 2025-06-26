@@ -13,9 +13,16 @@ import {
 } from "@/components";
 import { cpuData, gpuData } from "@/data";
 
+interface ComponentOption {
+  id: string;
+  name: string;
+  brand: string;
+  image: string;
+}
+
 const App = () => {
-  const [selectedCPU, setSelectedCPU] = useState(null);
-  const [selectedGPU, setSelectedGPU] = useState(null);
+  const [selectedCPU, setSelectedCPU] = useState<ComponentOption | null>(null);
+  const [selectedGPU, setSelectedGPU] = useState<ComponentOption | null>(null);
 
   const [cpuImageSize, setCpuImageSize] = useState(520);
   const [gpuImageSize, setGpuImageSize] = useState(520);
