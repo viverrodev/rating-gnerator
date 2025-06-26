@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from "react";
 import Image from "next/image";
-import { ChevronDown, Search, X } from "lucide-react";
+import { ChevronDown, Search, X, Download } from "lucide-react";
 
 interface Option {
   id: string;
@@ -67,8 +67,28 @@ export const Dropdown: React.FC<DropdownProps> = ({
     return `/icons/${brand}.svg`;
   };
 
+  const handleDownload = (option: Option, event?: React.MouseEvent) => {
+    if (event) {
+      event.stopPropagation(); // Prevent dropdown selection when clicking download in list
+    }
+
+    // Create a temporary anchor element to trigger download
+    const link = document.createElement("a");
+    link.href = option.image;
+    link.download = `${option.name.replace(/\s+/g, "_")}.png`; // Replace spaces with underscores
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleSelectedDownload = () => {
+    if (value) {
+      handleDownload(value);
+    }
+  };
+
   return (
-    <div>
+    <div className="space-y-3">
       <label className="text-white font-medium">{label}</label>
 
       <div className="relative z-100">
@@ -141,20 +161,32 @@ export const Dropdown: React.FC<DropdownProps> = ({
               {/* Filtered Options */}
               {filteredOptions.length > 0 ? (
                 filteredOptions.map((option) => (
-                  <button
+                  <div
                     key={option.id}
-                    onClick={() => handleSelect(option)}
-                    className="w-full text-left px-4 py-3 hover:bg-gray-600 text-white border-b border-gray-600 last:border-b-0 flex items-center gap-3"
+                    className="flex items-center justify-between px-4 py-3 hover:bg-gray-600 text-white border-b border-gray-600 last:border-b-0"
                   >
-                    <Image
-                      src={getBrandIcon(option.brand)}
-                      alt={option.brand}
-                      width={20}
-                      height={20}
-                      className="flex-shrink-0"
-                    />
-                    <span>{option.name}</span>
-                  </button>
+                    <button
+                      onClick={() => handleSelect(option)}
+                      className="flex items-center gap-3 flex-1 text-left"
+                    >
+                      <Image
+                        src={getBrandIcon(option.brand)}
+                        alt={option.brand}
+                        width={20}
+                        height={20}
+                        className="flex-shrink-0"
+                      />
+                      <span>{option.name}</span>
+                    </button>
+
+                    <button
+                      onClick={(e) => handleDownload(option, e)}
+                      className="p-2 text-gray-400 hover:text-white hover:bg-gray-500 rounded transition-colors ml-2"
+                      title={`Download ${option.name}`}
+                    >
+                      <Download className="w-4 h-4" />
+                    </button>
+                  </div>
                 ))
               ) : (
                 <div className="px-4 py-6 text-center text-gray-400">
@@ -165,6 +197,17 @@ export const Dropdown: React.FC<DropdownProps> = ({
           </div>
         )}
       </div>
+
+      {/* Download Selected Button */}
+      {value && (
+        <button
+          onClick={handleSelectedDownload}
+          className="w-full p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg flex items-center justify-center gap-2 transition-colors"
+        >
+          <Download className="w-4 h-4" />
+          Download {value.name}
+        </button>
+      )}
 
       {/* Click outside to close */}
       {isOpen && <div className="fixed inset-0 z-0" onClick={handleClose} />}
