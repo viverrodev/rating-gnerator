@@ -88,7 +88,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
   };
 
   return (
-    <div className="space-y-3">
+    <div>
       <label className="text-white font-medium">{label}</label>
 
       <div className="relative z-100">
