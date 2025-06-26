@@ -122,7 +122,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
 
         {/* Dropdown Menu */}
         {isOpen && (
-          <div className="absolute z-10 w-full mt-4  border border-gray-600 rounded-lg bg-black shadow-lg">
+          <div className="absolute z-10 w-full mt-2 border border-gray-600 rounded-lg bg-black shadow-lg">
             {/* Search Input */}
             <div className="p-3 border-b border-gray-600">
               <div className="relative">
@@ -202,7 +202,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
       {value && (
         <button
           onClick={handleSelectedDownload}
-          className="w-full p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg flex items-center justify-center gap-2 transition-colors"
+          className="w-full mt-2 p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg flex items-center justify-center gap-2 transition-colors"
         >
           <Download className="w-4 h-4" />
           Download {value.name}
