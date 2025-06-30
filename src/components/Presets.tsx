@@ -55,7 +55,7 @@ export const Presets: React.FC<PresetsProps> = ({
   activePreset,
 }) => {
   return (
-    <div className="bg-gray-800 rounded-lg p-6 mb-6">
+    <div className="bg-black border border-gray-600 rounded-lg p-6 mb-6">
       <h3 className="text-lg font-semibold text-white mb-4">Presets</h3>
 
       <div className="grid grid-cols-3 gap-3">
@@ -67,7 +67,7 @@ export const Presets: React.FC<PresetsProps> = ({
               onClick={() => onPresetSelect(preset.data, preset.name)}
               className={`px-4 py-3 rounded-lg transition-all font-medium ${
                 isActive
-                  ? "bg-blue-600 text-white border-2 border-blue-400 shadow-lg scale-105"
+                  ? "bg-orange-600 text-white shadow-lg scale-105"
                   : "bg-gray-700 hover:bg-gray-600 text-white border-2 border-transparent"
               }`}
             >

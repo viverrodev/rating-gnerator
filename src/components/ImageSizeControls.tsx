@@ -45,7 +45,7 @@ export const ImageSizeControls: React.FC<ImageSizeControlsProps> = ({
   };
 
   return (
-    <div className="bg-gray-800 rounded-lg p-6 mb-6">
+    <div className="bg-black border border-gray-600 rounded-lg p-6 mb-6">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* CPU Controls */}
         <div className="space-y-4">
